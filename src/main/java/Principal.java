@@ -31,6 +31,7 @@ public class Principal {
         for (PartidoJugado part : resultadosArray) {
             part.mostrarPartidoJugado();
         }
+
         Path pronosticos = Paths.get("pronosticos.csv");
         Scanner lectorPronosticos = new Scanner(pronosticos);
 
@@ -50,10 +51,10 @@ public class Principal {
             // para ver si recolecta bien los datos
             System.out.println("local: " + eqLocalTemp + " L: " + localTemp + " E: " + empateTemp + " V: " + visitaTemp + " visitante: " + eqVisitaTemp);
 
-            if (localTemp == "X") {
+            if (localTemp.contains("X")) {
                 resultadoTemp = ResultadoEnum.LOCAL;
             } else {
-                resultadoTemp = (visitaTemp == "X") ? ResultadoEnum.VISITANTE : ResultadoEnum.EMPATE;
+                resultadoTemp = (visitaTemp.contains("X")) ? ResultadoEnum.VISITANTE : ResultadoEnum.EMPATE;
             }
 
             PartidoPronosticado pronosticoTemp = new PartidoPronosticado(eqLocalTemp, eqVisitaTemp, resultadoTemp);
@@ -61,8 +62,20 @@ public class Principal {
             pronosticoTemp.mostrarPartidoPronosticado();
         }
 
+        int puntos = 0;
+        for (PartidoJugado part : resultadosArray) {
+            for (PartidoPronosticado pron : pronosticosArray) {
+
+                if (part.getResultado().equals(pron.getResultadoPron())) {
+                    puntos += 1;
+                }
+            }
+        }
+        System.out.println("puntos " + puntos);
 
         lectorResultado.close();
         lectorPronosticos.close();
+
     }
 }
+
