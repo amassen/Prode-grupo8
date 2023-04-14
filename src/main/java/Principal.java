@@ -69,17 +69,7 @@ public class Principal {
                 puntos += 1;
             }
         }
-        System.out.println("puntos " + puntos);
-
-       /* for (PartidoJugado part : resultadosArray) {
-            for (PartidoPronosticado pron : pronosticosArray) {
-
-                if (part.getResultado().equals(pron.getResultadoPron())) {
-                    puntos += 1;
-                }
-            }
-        }
-        System.out.println("puntos " + puntos);*/
+        System.out.println("Los puntos conseguidos hasta ahora son: " + puntos);
 
         lectorResultado.close();
         lectorPronosticos.close();

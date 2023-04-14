@@ -14,7 +14,7 @@ public class PartidoJugado extends Partido {
     }
 
     public void mostrarPartidoJugado() {
-        System.out.println(equipoLocal + " goles Local= " + golesLocal + " | " + equipoVisitante + " goles visitante = " + golesVisita + "| resultado: " + resultado);
+        System.out.println(equipoLocal + " Goles Local= " + golesLocal + " | " + equipoVisitante + " goles visitante = " + golesVisita + "| resultado: " + resultado);
     }
 
 
