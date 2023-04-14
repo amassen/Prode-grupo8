@@ -63,7 +63,15 @@ public class Principal {
         }
 
         int puntos = 0;
-        for (PartidoJugado part : resultadosArray) {
+
+        for(int i=0; i<resultadosArray.size(); i++){
+            if (resultadosArray.get(i).getResultado().equals(pronosticosArray.get(i).getResultadoPron())){
+                puntos += 1;
+            }
+        }
+        System.out.println("puntos " + puntos);
+
+       /* for (PartidoJugado part : resultadosArray) {
             for (PartidoPronosticado pron : pronosticosArray) {
 
                 if (part.getResultado().equals(pron.getResultadoPron())) {
@@ -71,7 +79,7 @@ public class Principal {
                 }
             }
         }
-        System.out.println("puntos " + puntos);
+        System.out.println("puntos " + puntos);*/
 
         lectorResultado.close();
         lectorPronosticos.close();
