@@ -69,7 +69,7 @@ public class Principal {
                 puntos += 1;
             }
         }
-        System.out.println("Los puntos conseguidos hasta ahora son: " + puntos);
+        System.out.println("Total de aciertos: " + puntos + " Los puntos conseguidos hasta ahora son: " + puntos);
 
         lectorResultado.close();
         lectorPronosticos.close();
