@@ -12,7 +12,12 @@ public class Principal {
 
         ArrayList<PartidoPronosticado> pronosticosArray = LeerPronostico.leerPronosticos();
 
-        int puntosFecha = 0;
+        Pronostico pronostico = new Pronostico(pronosticosArray, resultadosArray);
+        pronostico.puntosObtenidos();
+
+
+
+       /*int puntosFecha = 0;
 
         for (PartidoJugado partJugado : resultadosArray) {
             for (PartidoPronosticado partPronosticado : pronosticosArray) {
@@ -22,7 +27,7 @@ public class Principal {
                 }
             }
         }
-       System.out.println("Total de aciertos: " + puntosFecha + " Los puntos conseguidos hasta ahora son: " + puntosFecha);
+       System.out.println("Total de aciertos: " + puntosFecha + " Los puntos conseguidos hasta ahora son: " + puntosFecha);*/
 
 
     }
