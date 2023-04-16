@@ -62,14 +62,17 @@ public class Principal {
             pronosticoTemp.mostrarPartidoPronosticado();
         }
 
-        int puntos = 0;
+        int puntosFecha = 0;
 
-        for(int i=0; i<resultadosArray.size(); i++){
-            if (resultadosArray.get(i).getResultado().equals(pronosticosArray.get(i).getResultadoPron())){
-                puntos += 1;
+        for (PartidoJugado partJugado : resultadosArray) {
+            for (PartidoPronosticado partPronosticado : pronosticosArray) {
+                if (partJugado.getEquipoLocal().equals(partPronosticado.getEquipoLocal()) && partJugado.getResultado().equals(partPronosticado.getResultadoPron())) {
+                    puntosFecha += 1;
+                    break;
+                }
             }
         }
-        System.out.println("Total de aciertos: " + puntos + " Los puntos conseguidos hasta ahora son: " + puntos);
+        System.out.println("Total de aciertos: " + puntosFecha + " Los puntos conseguidos hasta ahora son: " + puntosFecha);
 
         lectorResultado.close();
         lectorPronosticos.close();
