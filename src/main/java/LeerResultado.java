@@ -13,7 +13,8 @@ public class LeerResultado {
 
         ArrayList<PartidoJugado> resultadosArray = new ArrayList<>();
         ResultadoEnum resultTemp;
-        while (lectorResultado.hasNext()) {
+        while (lectorResultado.hasNextInt()) {
+            int rondaTemp = lectorResultado.nextInt();
             String localTemp = lectorResultado.next();
             int golLocalTemp = lectorResultado.nextInt();
             int golVisitaTemp = lectorResultado.nextInt();
@@ -24,13 +25,13 @@ public class LeerResultado {
             } else {
                 resultTemp = (golVisitaTemp > golLocalTemp) ? ResultadoEnum.VISITANTE : ResultadoEnum.EMPATE;
             }
-            PartidoJugado partidoTemp = new PartidoJugado(localTemp, golLocalTemp, golVisitaTemp, visitaTemp, resultTemp);
+            PartidoJugado partidoTemp = new PartidoJugado(rondaTemp, localTemp, golLocalTemp, golVisitaTemp, visitaTemp, resultTemp);
             resultadosArray.add(partidoTemp);
         }
         //recorro el array para chequear
-        for (PartidoJugado part : resultadosArray) {
-            part.mostrarPartidoJugado();
-        }
+//        for (PartidoJugado part : resultadosArray) {
+//            part.mostrarPartidoJugado();
+//        }
 
         lectorResultado.close();
         return resultadosArray;

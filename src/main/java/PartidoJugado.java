@@ -6,8 +6,8 @@ public class PartidoJugado extends Partido {
     private int golesVisita;
     private ResultadoEnum resultado;
 
-    public PartidoJugado(String equipoLocal, int golesLocal, int golesVisita, String equipoVisitante, ResultadoEnum resultado) {
-        super(equipoLocal, equipoVisitante);
+    public PartidoJugado(int ronda, String equipoLocal, int golesLocal, int golesVisita, String equipoVisitante, ResultadoEnum resultado) {
+        super(ronda, equipoLocal, equipoVisitante);
         this.golesLocal = golesLocal;
         this.golesVisita = golesVisita;
         this.resultado = resultado;

@@ -1,10 +1,20 @@
 public abstract class Partido {
+    protected int ronda;
     protected String equipoLocal;
     protected String equipoVisitante;
 
-    public Partido(String equipoLocal, String equipoVisitante) {
+    public Partido(int ronda, String equipoLocal, String equipoVisitante) {
+        this.ronda = ronda;
         this.equipoLocal = equipoLocal;
         this.equipoVisitante = equipoVisitante;
+    }
+
+    public int getRonda() {
+        return ronda;
+    }
+
+    public void setRonda(int ronda) {
+        this.ronda = ronda;
     }
 
     public String getEquipoLocal() {
