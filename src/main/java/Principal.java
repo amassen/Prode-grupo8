@@ -1,35 +1,41 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Principal {
     public static void main(String[] args) throws IOException {
 
-        LeerResultado.leerResultados();
-
-        LeerPronostico.leerPronosticos();
-
-        ArrayList<PartidoJugado> resultadosArray = LeerResultado.leerResultados();
-
         ArrayList<PartidoPronosticado> pronosticosArray = LeerPronostico.leerPronosticos();
-
-        Pronostico pronostico = new Pronostico(pronosticosArray, resultadosArray);
-        pronostico.puntosObtenidos();
-
-
-
-       /*int puntosFecha = 0;
-
-        for (PartidoJugado partJugado : resultadosArray) {
-            for (PartidoPronosticado partPronosticado : pronosticosArray) {
-                if (partJugado.getEquipoLocal().equals(partPronosticado.getEquipoLocal()) && partJugado.getResultado().equals(partPronosticado.getResultadoPron())) {
-                    puntosFecha += 1;
-                    break;
-                }
-            }
+        System.out.println("Pronosticos");
+        for (PartidoPronosticado partidoPronosticado : pronosticosArray) {
+           partidoPronosticado.mostrarPartidoPronosticado();
         }
-       System.out.println("Total de aciertos: " + puntosFecha + " Los puntos conseguidos hasta ahora son: " + puntosFecha);*/
+        System.out.println("Resultados");
+        Campeonato campeonato =  LeerResultado.leerResultados();
+        for (PartidoJugado partidoJugado : campeonato.getPartidos()){
+            partidoJugado.mostrarPartidoJugado();
+        }
 
+        HashMap<String, Jugador> jugadores = obtenerJugadores(pronosticosArray);
+        Prode prode = new Prode(campeonato, jugadores);
 
+        Jugador jugador = prode.ganador();
+        System.out.println("\uD83C\uDFC6 Ha ganado: " + jugador.getNombre() + " \uD83C\uDFC6");
     }
+
+    private static HashMap<String, Jugador> obtenerJugadores(ArrayList<PartidoPronosticado> partidosPronosticados) {
+        HashMap<String, Jugador> jugadores = new HashMap<>();
+
+        for (PartidoPronosticado partido : partidosPronosticados) {
+            Jugador jugador = jugadores.get(partido.getNombreJugador());
+            if (jugador == null) {
+                jugador = new Jugador(partido.getNombreJugador());
+                jugadores.put(partido.getNombreJugador(), jugador);
+            }
+            jugador.agregarPartido(partido);
+        }
+        return jugadores;
+    }
+
 }
 

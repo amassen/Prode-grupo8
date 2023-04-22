@@ -1,9 +1,9 @@
-Mariana;Argentina;X; ; ;Arabia Saudita
-Mariana;Polonia; ;X; ;Mexico
-Mariana;Argentina;X; ; ;Mexico
-Mariana;Arabia Saudita; ; ;X;Polonia
-Pedro;Argentina;X; ; ;Arabia Saudita
-Pedro;Polonia; ; ;X;Mexico
-Pedro;Argentina;X; ; ;Mexico
-Pedro;Arabia Saudita; ;X; ;Polonia
+1;Mariana;Argentina;X; ; ;Arabia Saudita
+1;Mariana;Polonia; ;X; ;Mexico
+2;Mariana;Argentina;X; ; ;Mexico
+2;Mariana;Arabia Saudita; ; ;X;Polonia
+1;Pedro;Argentina;X; ; ;Arabia Saudita
+1;Pedro;Polonia; ; ;X;Mexico
+2;Pedro;Argentina;X; ; ;Mexico
+2;Pedro;Arabia Saudita; ;X; ;Polonia
 

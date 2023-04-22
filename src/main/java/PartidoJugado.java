@@ -1,21 +1,31 @@
 import lombok.Getter;
 import lombok.Setter;
-@Getter @Setter
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class PartidoJugado extends Partido {
     private int golesLocal;
     private int golesVisita;
-    private ResultadoEnum resultado;
 
-    public PartidoJugado(int ronda, String equipoLocal, int golesLocal, int golesVisita, String equipoVisitante, ResultadoEnum resultado) {
+    public PartidoJugado(int ronda, String equipoLocal, int golesLocal, int golesVisita, String equipoVisitante) {
         super(ronda, equipoLocal, equipoVisitante);
         this.golesLocal = golesLocal;
         this.golesVisita = golesVisita;
-        this.resultado = resultado;
+    }
+
+    public ResultadoEnum resultado() {
+        ResultadoEnum resultadoTemp;
+        if (golesLocal > golesVisita) {
+            resultadoTemp = ResultadoEnum.LOCAL;
+        } else {
+            resultadoTemp = (golesVisita > golesLocal) ? ResultadoEnum.VISITANTE : ResultadoEnum.EMPATE;
+        }
+        return resultadoTemp;
     }
 
     public void mostrarPartidoJugado() {
-        System.out.println(equipoLocal + " Goles Local= " + golesLocal + " | " + equipoVisitante + " goles visitante = " + golesVisita + " | resultado: " + resultado);
+        System.out.println(equipoLocal + " Goles Local= " + golesLocal + " | " + equipoVisitante + " goles visitante = " + golesVisita + " | resultado: " + resultado());
     }
-
-
 }

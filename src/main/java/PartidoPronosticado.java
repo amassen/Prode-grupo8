@@ -1,18 +1,23 @@
 import lombok.Getter;
 import lombok.Setter;
-@Getter @Setter
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
 public class PartidoPronosticado extends Partido {
-    private String nombre;
+
+    private String nombreJugador;
     private ResultadoEnum resultadoPron;
 
-    public PartidoPronosticado(String nombre, int ronda, String equipoLocal, String equipoVisitante, ResultadoEnum resultadoPron) {
-        super(ronda, equipoLocal, equipoVisitante);
-        this.nombre = nombre;
+    public PartidoPronosticado(String nombreJugador, int fecha, String equipoLocal, String equipoVisitante, ResultadoEnum resultadoPron) {
+        super(fecha, equipoLocal, equipoVisitante);
+        this.nombreJugador = nombreJugador;
         this.resultadoPron = resultadoPron;
     }
 
     public void mostrarPartidoPronosticado() {
-        System.out.println("Jugador: "+nombre+" Ronda: "+ronda+" - "+equipoLocal + " vs. " + equipoVisitante + " = " + resultadoPron);
+        System.out.println("Jugador: "+nombreJugador+" Ronda: "+fecha+" - "+equipoLocal + " vs. " + equipoVisitante + " = " + resultadoPron);
     }
 
 
