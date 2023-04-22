@@ -10,7 +10,7 @@ public class LeerResultado {
         //Scanner lectorResultado = new Scanner(resultados);
         //lectorResultado.useDelimiter("[;\\n\\r]+");
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/resultados", "root","root");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/resultados", "root","Lilc1982");
 
         Statement st = conn.createStatement();
         ResultSet rs = st.executeQuery("select * from resultados");
@@ -19,10 +19,10 @@ public class LeerResultado {
         while (rs.next()) {
             int idTemp = rs.getInt("id");
             int fechaTemp = rs.getInt("fecha");
-            String localTemp = rs.getString("equipo local");
-            int golLocalTemp = rs.getInt("goles local");
-            int golVisitaTemp = rs.getInt("goles visitante");
-            String visitaTemp = rs.getString("equipo visitante");
+            String localTemp = rs.getString("equipolocal");
+            int golLocalTemp = rs.getInt("goleslocal");
+            int golVisitaTemp = rs.getInt("golesvisitante");
+            String visitaTemp = rs.getString("equipovisitante");
 
             PartidoJugado partidoTemp = new PartidoJugado(fechaTemp, localTemp, golLocalTemp, golVisitaTemp, visitaTemp);
             campeonato.agregarPartido(partidoTemp);
