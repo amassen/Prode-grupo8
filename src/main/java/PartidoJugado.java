@@ -9,8 +9,8 @@ public class PartidoJugado extends Partido {
     private int golesLocal;
     private int golesVisita;
 
-    public PartidoJugado(int ronda, String equipoLocal, int golesLocal, int golesVisita, String equipoVisitante) {
-        super(ronda, equipoLocal, equipoVisitante);
+    public PartidoJugado(int fecha, String equipoLocal, int golesLocal, int golesVisita, String equipoVisitante) {
+        super(fecha, equipoLocal, equipoVisitante);
         this.golesLocal = golesLocal;
         this.golesVisita = golesVisita;
     }

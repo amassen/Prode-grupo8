@@ -1,9 +1,10 @@
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Principal {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
 
         ArrayList<PartidoPronosticado> pronosticosArray = LeerPronostico.leerPronosticos();
         System.out.println("Pronosticos");
