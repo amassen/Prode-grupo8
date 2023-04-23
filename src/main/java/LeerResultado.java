@@ -19,10 +19,10 @@ public class LeerResultado {
         while (rs.next()) {
             int idTemp = rs.getInt("id");
             int fechaTemp = rs.getInt("fecha");
-            String localTemp = rs.getString("equipolocal");
-            int golLocalTemp = rs.getInt("goleslocal");
-            int golVisitaTemp = rs.getInt("golesvisitante");
-            String visitaTemp = rs.getString("equipovisitante");
+            String localTemp = rs.getString("equipoLocal");
+            int golLocalTemp = rs.getInt("golesLocal");
+            int golVisitaTemp = rs.getInt("golesVisitante");
+            String visitaTemp = rs.getString("equipoVisitante");
 
             PartidoJugado partidoTemp = new PartidoJugado(fechaTemp, localTemp, golLocalTemp, golVisitaTemp, visitaTemp);
             campeonato.agregarPartido(partidoTemp);
