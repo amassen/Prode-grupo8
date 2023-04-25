@@ -20,6 +20,7 @@ public class Prode {
         int puntajeGanador = 0;
         for (Jugador jugador : jugadores.values()) {
             int puntos = jugador.puntosTotal(campeonato);
+            System.out.println("El jugador "+jugador.getNombre()+" ha logrado "+puntos+" puntos.");
             if(puntos > puntajeGanador){
                 ganador = jugador;
                 puntajeGanador = puntos;

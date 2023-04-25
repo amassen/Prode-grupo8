@@ -1,16 +1,13 @@
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.*;
-import java.util.Scanner;
 
 public class LeerResultado {
-    public static Campeonato leerResultados() throws IOException, SQLException {
+    public static Campeonato leerResultados() throws SQLException {
         //Path resultados = Paths.get("resultados.csv");
         //Scanner lectorResultado = new Scanner(resultados);
         //lectorResultado.useDelimiter("[;\\n\\r]+");
 
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/resultados", "root","Lilc1982");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/resultados", "root","root");
 
         Statement st = conn.createStatement();
         ResultSet rs = st.executeQuery("select * from resultados");

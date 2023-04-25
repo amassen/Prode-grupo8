@@ -28,4 +28,13 @@ public class Campeonato {
         }
         return null;
     }
+    public int cantFechas(){
+        int cantFechas=0;
+        for(PartidoJugado partJugado : partidos) {
+            if (partJugado.getFecha()>cantFechas) {
+                cantFechas= partJugado.getFecha();
+            }
+        }
+        return cantFechas;
+    }
 }

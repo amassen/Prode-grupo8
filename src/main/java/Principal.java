@@ -20,6 +20,8 @@ public class Principal {
         HashMap<String, Jugador> jugadores = obtenerJugadores(pronosticosArray);
         Prode prode = new Prode(campeonato, jugadores);
 
+        System.out.println("El campeonato tiene " + campeonato.cantFechas() + " fechas");
+
         Jugador jugador = prode.ganador();
         System.out.println("\uD83C\uDFC6 Ha ganado: " + jugador.getNombre() + " \uD83C\uDFC6");
     }
